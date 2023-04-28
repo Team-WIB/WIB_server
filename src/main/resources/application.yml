@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://localhost:3306/WIBdb?serverTimezone=UTC
+    username: root
+    password: dmsdn0205
