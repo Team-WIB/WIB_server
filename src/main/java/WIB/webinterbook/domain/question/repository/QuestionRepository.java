@@ -1,6 +1,6 @@
-package WIB.webinterbook.question.repository;
+package WIB.webinterbook.domain.question.repository;
 
-import WIB.webinterbook.question.Question;
+import WIB.webinterbook.domain.question.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

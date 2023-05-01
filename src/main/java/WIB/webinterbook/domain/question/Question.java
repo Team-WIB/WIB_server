@@ -1,14 +1,12 @@
-package WIB.webinterbook.question;
+package WIB.webinterbook.domain.question;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
-@Table
+@Table(name = "questions")
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
@@ -18,6 +16,6 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String content;
-    @OneToMany
-    private List<QuestionTag> tags;
+    @Enumerated(EnumType.STRING)
+    private QuestionTag tag;
 }
