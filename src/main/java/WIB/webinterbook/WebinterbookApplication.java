@@ -2,12 +2,14 @@ package WIB.webinterbook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+@EnableJpaAuditing
 @SpringBootApplication
 public class WebinterbookApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(WebinterbookApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(WebinterbookApplication.class, args);
+    }
 
 }

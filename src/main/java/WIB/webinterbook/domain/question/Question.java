@@ -1,17 +1,20 @@
 package WIB.webinterbook.domain.question;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
+import java.util.TimeZone;
+
 @Entity
 @Table(name = "questions")
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-public class Question {
+public class Question extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +22,6 @@ public class Question {
     @NotEmpty
     private String content;
     @Enumerated(EnumType.STRING)
-    @NotEmpty
     private QuestionTag tag;
+
 }
