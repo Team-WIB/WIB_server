@@ -2,6 +2,7 @@ package WIB.webinterbook.domain.question.presentation;
 
 import WIB.webinterbook.domain.question.presentation.dto.req.QuestionReqDto;
 import WIB.webinterbook.domain.question.service.CreateQuestionService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class QuestionController {
     private final CreateQuestionService createQuestionService;
 
     @PostMapping("/")
-    public ResponseEntity<Void> createQuestion(@RequestBody QuestionReqDto reqDto) {
+    public ResponseEntity<Void> createQuestion(@RequestBody @Valid QuestionReqDto reqDto) {
         createQuestionService.execute(reqDto);
         return ResponseEntity.ok().build();
     }

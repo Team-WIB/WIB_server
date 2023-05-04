@@ -19,7 +19,6 @@ public class Question extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotEmpty
     private String content;
     @Enumerated(EnumType.STRING)
     private QuestionTag tag;
