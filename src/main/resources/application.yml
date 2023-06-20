@@ -3,7 +3,8 @@ spring:
     database: mysql
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
+    generate-ddl: true
   datasource:
     url: jdbc:mysql://localhost:3306/WIBdb?serverTimezone=UTC
     username: root

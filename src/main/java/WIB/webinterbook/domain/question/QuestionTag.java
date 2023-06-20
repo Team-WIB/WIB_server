@@ -1,6 +1,5 @@
 package WIB.webinterbook.domain.question;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter

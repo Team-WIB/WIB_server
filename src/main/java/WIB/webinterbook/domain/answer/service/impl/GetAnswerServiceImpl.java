@@ -5,6 +5,7 @@ import WIB.webinterbook.domain.answer.presentation.dto.res.GetAnswersResDto;
 import WIB.webinterbook.domain.answer.repository.AnswerRepository;
 import WIB.webinterbook.domain.answer.service.GetAnswersService;
 import WIB.webinterbook.domain.question.Question;
+import WIB.webinterbook.domain.question.exception.QuestionNotFoundException;
 import WIB.webinterbook.domain.question.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class GetAnswerServiceImpl implements GetAnswersService {
 
     @Override
     public GetAnswersResDto execute(Long id) {
-        Question question = questionRepository.findById(id).orElseThrow();
+        Question question = questionRepository.findById(id).orElseThrow(QuestionNotFoundException::new);
         List<Answer> answers = answerRepository.findAllByQuestion(question);
         return new GetAnswersResDto(answers);
     }
