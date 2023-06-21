@@ -18,7 +18,7 @@ public class QuestionReqDto {
 
     public Question toEntity(QuestionTag tag) {
         return Question.builder()
-            .content(content)
+            .question(content)
             .tag(tag)
             .build();
     }
