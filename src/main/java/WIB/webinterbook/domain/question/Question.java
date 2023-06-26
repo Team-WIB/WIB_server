@@ -20,10 +20,10 @@ public class Question extends BaseTimeEntity {
     private String question;
     @Enumerated(EnumType.STRING)
     private QuestionTag tag;
-    private String answers;
+    private String answer;
 
     public void update(String question, String answers) {
         this.question = question;
-        this.answers = answers;
+        this.answer = answers;
     }
 }
