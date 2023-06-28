@@ -17,6 +17,6 @@ public class UpdateQuestionServiceImpl implements UpdateQuestionService {
     @Override
     public void execute(Long id, UpdateQuestionReqDto reqDto) {
         Question question = questionRepository.findById(id).orElseThrow(QuestionNotFoundException::new);
-        question.update(reqDto.getQuestion(), reqDto.getAnswer());
+        questionRepository.save(question.update(reqDto.getQuestion(), reqDto.getAnswer(), reqDto.getTag()));
     }
 }

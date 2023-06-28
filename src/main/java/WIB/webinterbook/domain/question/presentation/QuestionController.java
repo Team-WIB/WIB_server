@@ -43,7 +43,7 @@ public class QuestionController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Question> updateQuestion(@PathVariable Long id, UpdateQuestionReqDto reqDto) {
+    public ResponseEntity<Question> updateQuestion(@PathVariable Long id, @RequestBody UpdateQuestionReqDto reqDto) {
         updateQuestionService.execute(id, reqDto);
         return ResponseEntity.ok().build();
     }

@@ -5,12 +5,13 @@ import WIB.webinterbook.domain.question.QuestionTag;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 public class GetQuestionsResDto {
 
-    private List<SimpleQuestionInfo> questions;
+    private List<SimpleQuestionInfo> questions = new ArrayList<SimpleQuestionInfo>();
 
     public GetQuestionsResDto(List<Question> datas) {
         datas.forEach(data -> questions.add(new SimpleQuestionInfo(data)));

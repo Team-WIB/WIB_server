@@ -1,10 +1,7 @@
 package WIB.webinterbook.domain.question;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "questions")
@@ -22,8 +19,10 @@ public class Question extends BaseTimeEntity {
     private QuestionTag tag;
     private String answer;
 
-    public void update(String question, String answers) {
+    public Question update(String question, String answers, String tag) {
         this.question = question;
         this.answer = answers;
+        this.tag = new QuestionTagUtil().checkIsQuestionTag(tag);
+        return this;
     }
 }
