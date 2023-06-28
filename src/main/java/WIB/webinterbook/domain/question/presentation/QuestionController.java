@@ -3,8 +3,10 @@ package WIB.webinterbook.domain.question.presentation;
 import WIB.webinterbook.domain.question.Question;
 import WIB.webinterbook.domain.question.presentation.dto.req.QuestionReqDto;
 import WIB.webinterbook.domain.question.presentation.dto.req.UpdateQuestionReqDto;
+import WIB.webinterbook.domain.question.presentation.dto.res.GetQuestionResDto;
 import WIB.webinterbook.domain.question.presentation.dto.res.GetQuestionsResDto;
 import WIB.webinterbook.domain.question.service.CreateQuestionService;
+import WIB.webinterbook.domain.question.service.GetQuestionService;
 import WIB.webinterbook.domain.question.service.GetQuestionsService;
 import WIB.webinterbook.domain.question.service.UpdateQuestionService;
 import jakarta.validation.Valid;
@@ -22,6 +24,7 @@ public class QuestionController {
     private final CreateQuestionService createQuestionService;
     private final GetQuestionsService getQuestionsService;
     private final UpdateQuestionService updateQuestionService;
+    private final GetQuestionService getQuestionService;
 
     @PostMapping
     public ResponseEntity<Void> createQuestion(@RequestBody @Valid QuestionReqDto reqDto) {
@@ -31,12 +34,16 @@ public class QuestionController {
 
     @GetMapping
     public ResponseEntity<GetQuestionsResDto> getQuestions() {
-        GetQuestionsResDto result = getQuestionsService.execute();
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok(getQuestionsService.execute());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<GetQuestionResDto> getQuestion(@PathVariable Long id) {
+        return ResponseEntity.ok(getQuestionService.execute(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Question> updateQuestion(Long id, UpdateQuestionReqDto reqDto) {
+    public ResponseEntity<Question> updateQuestion(@PathVariable Long id, UpdateQuestionReqDto reqDto) {
         updateQuestionService.execute(id, reqDto);
         return ResponseEntity.ok().build();
     }
