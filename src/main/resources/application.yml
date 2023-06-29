@@ -5,7 +5,12 @@ spring:
     hibernate:
       ddl-auto: update
     generate-ddl: true
-  datasource:
-    url: jdbc:mysql://localhost:3306/WIBdb?serverTimezone=UTC
+  datasource: #mysql
+    url: jdbc:mysql://wib-db.crrfxgdf45hd.ap-northeast-2.rds.amazonaws.com:3306/wib_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: root
     password: dmsdn0205
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #h2
+#    url: jdbc:mysql://localhost:3306/WIBdb?serverTimezone=UTC
+#    username: root
+#    password: dmsdn0205
