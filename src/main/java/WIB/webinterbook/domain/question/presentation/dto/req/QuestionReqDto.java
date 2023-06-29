@@ -13,12 +13,14 @@ import lombok.NoArgsConstructor;
 public class QuestionReqDto {
 
     @NotBlank(message = "질문은 필수 입력 사항입니다.")
-    String content;
+    String question;
+    String answer;
     String tag;
 
     public Question toEntity(QuestionTag tag) {
         return Question.builder()
-            .question(content)
+            .question(question)
+            .answer(answer)
             .tag(tag)
             .build();
     }
