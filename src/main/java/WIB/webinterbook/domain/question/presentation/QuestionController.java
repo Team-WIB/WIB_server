@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping("/questions")
 @Slf4j
-@CrossOrigin(origins = "http://ec2-3-39-199-70.ap-northeast-2.compute.amazonaws.com:8080/")
+@CrossOrigin(origins = "http://ec2-3-39-199-70.ap-northeast-2.compute.amazonaws.com:8080")
 public class QuestionController {
 
     private final CreateQuestionService createQuestionService;
