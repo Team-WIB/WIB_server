@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 REPOSITORY=/home/ec2-user/app/deploy
 PROJECT_NAME=WIB_server #해당 위치에 properties에 작성한 프로젝트명과 동일하게 작성합니다.
