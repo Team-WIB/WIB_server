@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 REPOSITORY=/home/ec2-user/app/deploy
 PROJECT_NAME=WIB_server #해당 위치에 properties에 작성한 프로젝트명과 동일하게 작성합니다.
@@ -29,4 +29,4 @@ chmod +x $JAR_NAME
 echo "> $JAR_NAME 실행"
 nohup java -jar \
     -Dspring.config.location=classpath:/application.yml \
-    $JAR_NAME 2>&1 &
+    $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
