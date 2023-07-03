@@ -1,5 +1,5 @@
 env:  
-  S3_BUCKET_NAME: WIB-build 
+  S3_BUCKET_NAME: wib-build 
   PROJECT_NAME: WIB_server 
 
 name: deploy # (0) GitHub Action에서 보여질 이름을 지정합니다. 
