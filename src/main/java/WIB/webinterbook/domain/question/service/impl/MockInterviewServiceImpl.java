@@ -26,9 +26,9 @@ public class MockInterviewServiceImpl implements MockInterviewService {
         shuffle(tags);
         List<Question> result;
         if (tag.length() < amount) {
-            result = tags.subList(0, tag.length() - 1);
+            result = tags.subList(0, tag.length());
         } else {
-            result = tags.subList(0, amount - 1);
+            result = tags.subList(0, amount);
         }
         return result;
     }
