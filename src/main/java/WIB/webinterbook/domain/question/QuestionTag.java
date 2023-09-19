@@ -6,6 +6,4 @@ import lombok.Getter;
 public enum QuestionTag {
     FE,
     BE;
-
-    String content;
 }

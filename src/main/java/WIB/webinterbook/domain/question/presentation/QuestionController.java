@@ -1,6 +1,7 @@
 package WIB.webinterbook.domain.question.presentation;
 
 import WIB.webinterbook.domain.question.Question;
+import WIB.webinterbook.domain.question.QuestionTag;
 import WIB.webinterbook.domain.question.presentation.dto.req.QuestionReqDto;
 import WIB.webinterbook.domain.question.presentation.dto.req.UpdateQuestionReqDto;
 import WIB.webinterbook.domain.question.presentation.dto.res.GetQuestionResDto;
@@ -51,7 +52,7 @@ public class QuestionController {
 
     @GetMapping("/interview/{tag}/{amount}")
     public ResponseEntity<List<Question>> mockInterview(
-        @PathVariable("tag") String tag,
+        @PathVariable("tag") QuestionTag tag,
         @PathVariable("amount") int amount) {
         return ResponseEntity.ok(mockInterviewService.execute(tag, amount));
     }

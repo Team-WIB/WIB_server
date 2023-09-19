@@ -1,6 +1,8 @@
 package WIB.webinterbook.global.config;
 
+import WIB.webinterbook.global.config.converter.StringToStudyTagConverter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -16,5 +18,10 @@ public class WebConfig implements WebMvcConfigurer {
                 "https://localhost:3000",
                 "https://127.0.0.1:3000")
             .allowedMethods("GET", "POST", "PUT");
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(new StringToStudyTagConverter());
     }
 }

@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface MockInterviewService {
 
-    List<Question> execute(String tag, int amount);
+    List<Question> execute(QuestionTag tag, int amount);
 }
