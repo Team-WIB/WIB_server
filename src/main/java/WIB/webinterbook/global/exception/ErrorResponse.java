@@ -28,5 +28,4 @@ public class ErrorResponse {
                 .message(e.getErrorCode().getMessage())
                 .build());
     }
-
 }

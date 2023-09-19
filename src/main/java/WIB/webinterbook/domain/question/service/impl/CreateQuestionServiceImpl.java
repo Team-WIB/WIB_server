@@ -18,6 +18,6 @@ public class CreateQuestionServiceImpl implements CreateQuestionService {
     @Override
     public void execute(QuestionReqDto questionReqDto) {
 
-        questionRepository.save(questionReqDto.toEntity(new QuestionTagUtil().checkIsQuestionTag(questionReqDto.getTag())));
+        questionRepository.save(questionReqDto.toEntity(new QuestionTagUtil().stringToQuestionTag(questionReqDto.getTag())));
     }
 }

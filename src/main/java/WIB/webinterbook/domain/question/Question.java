@@ -22,7 +22,7 @@ public class Question extends BaseTimeEntity {
     public Question update(String question, String answers, String tag) {
         this.question = question;
         this.answer = answers;
-        this.tag = new QuestionTagUtil().checkIsQuestionTag(tag);
+        this.tag = new QuestionTagUtil().stringToQuestionTag(tag);
         return this;
     }
 }
